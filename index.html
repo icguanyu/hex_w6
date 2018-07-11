@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>表單驗證</title>
+  <link rel="stylesheet" href="style/all.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+    crossorigin="anonymous">
+
+
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="container">
+      <div class="process">
+        <div class="bar">
+          <div class="inner"></div>
+        </div>
+        <li class="active">
+          <span></span>
+          <i class="fas fa-check"></i>
+        </li>
+        <li>
+          <span></span>
+          <i class="fas fa-check"></i>
+        </li>
+        <li>
+          <span></span>
+          <i class="fas fa-check"></i>
+        </li>
+        <li>
+          <span></span>
+          <i class="fas fa-check"></i>
+        </li>
+      </div>
+      <form class="myform" id="myform">
+        <div class="form" id="form_0">
+          <div class="title">
+            <h1>創建帳號</h1>
+            <p>很高興見到您!</p>
+          </div>
+          <label for="id">帳號名稱</label>
+          <input type="text" name="id" id="id" placeholder="example@email.com">
+          <label for="password">密碼</label>
+          <input type="password" name="password" id="password" placeholder="6碼以上數字與英文字母(至少含1大寫)">
+          <label for="password_check">密碼確認</label>
+          <input type="password" name="password_check" id="password_check" placeholder="再次輸入密碼">
+          <input type="button" value="資料尚未填妥" class="submit" disabled="disabled">
+        </div>
+        <div class="form" id="form_1">
+          <div class="title">
+            <h1>基本資料</h1>
+            <p>請提供個資讓我們把你賣掉:D</p>
+          </div>
+          <div class="basic row">
+            <div class="name">
+              <label>姓名</label>
+              <input type="text" name="myname" id="myname" placeholder="王小明">
+            </div>
+            <div class="phone">
+              <label>手機</label>
+              <input type="text" name="phone" id="phone" placeholder="0912 345 678">
+            </div>
+          </div>
+          <div class="birthday row">
+            <label>生日</label>
+            <div>
+              <select name="year" id="year">
+                <option value="0" disabled selected>選取年分</option>
+              </select>
+              <select name="month" id="month">
+                <option value="0" disabled selected>選取月分</option>
+              </select>
+              <select name="day" id="day">
+                <option value="0" disabled selected>選取日期</option>
+              </select>
+            </div>
+          </div>
+          <div class="address row">
+            <p>地址
+              <span class="optional">（選填）</span>
+            </p>
+            <div class="basic">
+              <div>
+                <select name="city" id="city">
+                  <option value="0" disabled selected>縣市</option>
+                </select>
+              </div>
+              <div>
+                <select name="dist" id="dist">
+                  <option value="0" disabled selected>鄉鎮</option>
+                </select>
+              </div>
+            </div>
+            <input type="text" name="address" id="address" placeholder="詳細地址">
+          </div>
+          <input type="button" value="資料尚未填妥" class="submit" disabled="disabled">
+        </div>
+        <div class="form" id="form_2">
+          <div class="title">
+            <h1>上傳您的清涼照</h1>
+            <p>我們想要看你更多</p>
+          </div>
+          <label for="upload">
+            <i class="fas fa-images"></i>
+            <p>上傳最多三張照片
+              <br>
+              <span>最大尺度:^^?</span>
+            </p>
+          </label>
+          <input type="file" name="upload" id="upload">
+          <input type="button" value="我不會，請跳過" class="submit ready">
+        </div>
+        <div class="form" id="form_3">
+          <div class="title">
+            <h1>付款資訊</h1>
+            <p>輸入您的信用卡資料</p>
+          </div>
+          <div class="card_number row">
+            <label>卡號</label>
+            <input type="text" name="cardnumber" id="cardnumber" placeholder="0000 0000 0000 0000">
+            <i class="fab fa-cc-visa"></i>
+          </div>
+          <div class="basic row">
+            <div class="name">
+              <label>持卡人姓名</label>
+              <input type="text" name="cardholder" id="cardholder" placeholder="王小明">
+            </div>
+            <div class="phone">
+              <label>銀行名稱</label>
+              <input type="text" name="bank" id="bank" placeholder="台灣銀行">
+            </div>
+          </div>
+          <div class="card_info row">
+            <div class="cvv">
+              <label>CVV</label>
+              <input type="text" name="cvv" id="cvv" maxlength="3">
+            </div>
+            <div class="expire">
+              <label>到期日</label>
+              <div class="basic">
+                <select name="ex_y" id="ex_y">
+                  <option value="0" disabled selected>年分</option>
+                </select>
+                <select name="ex_m" id="ex_m">
+                  <option value="0" disabled selected>月分</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <input type="button" value="資料尚未填妥" class="submit" id="submit" disabled="disabled">
+        </div>
+        <div class="form" id="form_4">
+          <div class="title">
+            <h1>恭喜您！</h1>
+            <p>您已經成為六角學院的學員囉！</p>
+          </div>
+          <i class="fas fa-smile"></i>
+          <div class="countdown">
+            <p>再過
+              <span>10</span>秒鐘此頁面將自動銷毀...</p>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="info">
+      <p>作者：icguanyu（練習作品W6）
+        <a href="https://github.com/icguanyu" target="_blank">Github</a>｜
+        <a href="https://codepen.io/icguanyu/" target="_blank">Codepen</a>
+      </p>
+    </div>
+  </div>
+</body>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+<script src="js/all.js"></script>
+<script src="js/validation.js"></script>
+
+</html>
