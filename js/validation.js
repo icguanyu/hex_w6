@@ -1,9 +1,4 @@
-// $('#submit').on('click',function(){
-//   var aaa = $('form').serializeArray()
-//   console.log(aaa)
-// })
-
-/***************show result******************/
+//===============提醒顯示===============//
 function check(reg,element){
   if(reg.test(element.val())){
     $(element).prev('label').children('.check').hide().siblings('.true').show()
@@ -11,7 +6,7 @@ function check(reg,element){
     $(element).prev('label').children('.check').hide().siblings('.false').show()
   }
 }
-//===============第一頁表單===============//
+//===============帳號密碼===============//
 //id(email)
 var id = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/; 
 var $id = $('#id')
@@ -35,7 +30,7 @@ $('#password_check').on('keyup',function(){
   allcheck(0)
 })
 
-//===============第二頁表單===============//
+//===============基本資料===============//
 //姓名
 var myname = /^[\u4e00-\u9fa5_a-zA-Z0-9\s]{2,10}$/;
 var $myname = $('#myname')
@@ -110,12 +105,7 @@ $('#ex_y,#ex_m').on('change',function(){
   allcheck(3)
 })
 
-
-
-
-
-
-//密碼二次確認涵式
+//密碼二次確認
 var password_confirm
 var firstPassword
 var secPassword
@@ -128,7 +118,7 @@ function passwordCheck(){
     $('#password_check').prev('label').children('.check').hide().siblings('.false').show()
   }
 }
-/*******確認表單無誤********/
+//確認表單無誤再開啟下一步
 function allcheck(step){
   if(step==0){
     var data = {
@@ -146,7 +136,6 @@ function allcheck(step){
         "value":'資料尚未填妥'
       })
     }
-
   }else if(step==1){
     var data = {
       'myname' : myname.test($myname.val()),
