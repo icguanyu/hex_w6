@@ -3,7 +3,6 @@ body,
 html {
   margin: 0;
   padding: 0;
-  height: 100%;
   font-family: "Noto Sans TC", sans-serif;
 }
 
@@ -28,15 +27,17 @@ a {
 
 body {
   background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  width: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0275d8;
+  cursor: pointer;
 }
 
 label {
@@ -67,7 +68,10 @@ option {
   position: relative;
   outline: none;
   width: 100%;
-  border: none;
+  border: 0px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 0;
   padding: 5px 10px;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -99,7 +103,8 @@ input:focus {
 input[type="button"] {
   cursor: pointer;
   font-family: "Noto Sans TC", sans-serif;
-  border: none;
+  border: 0px;
+  -webkit-appearance: none;
   margin-top: 20px;
   background: #bee1ff;
   color: #fff;
@@ -110,7 +115,8 @@ input[type="file"] {
 }
 
 .wrap {
-  height: 768px;
+  width: 456px;
+  margin: 80px auto;
   background: #fefefe;
 }
 
@@ -254,10 +260,14 @@ input[type="file"] {
 }
 
 .info {
+  width: 100%;
   text-align: center;
   letter-spacing: 1px;
-  color: #fff;
+  color: #0275d8;
   font-size: 14px;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 ::-webkit-input-placeholder {
@@ -431,4 +441,45 @@ input[type="file"] {
   letter-spacing: 2px;
   color: #0275d8;
   margin: 30px 0;
+}
+
+@media screen and (max-width: 480px) {
+  .wrap {
+    margin: 0px auto;
+    width: 100%;
+  }
+  .wrap .container {
+    width: 100%;
+    position: relative;
+  }
+  .wrap .container .process {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 100%;
+    background: #fff;
+    z-index: 1;
+    padding: 30px 30px;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-top: 8px solid #0275d8;
+  }
+  .wrap .container .process .bar {
+    width: 85%;
+  }
+  .myform {
+    margin-top: 60px;
+    height: 600px;
+  }
+  .myform form {
+    overflow: auto;
+  }
+  .info {
+    font-size: 12px;
+    padding: 20px 10px;
+    width: 100%;
+  }
 }

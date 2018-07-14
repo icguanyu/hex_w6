@@ -67,7 +67,11 @@ var cardnumber = /^\d{4} \d{4} \d{4} \d{4}$/;
 var $cardnumber = $('#cardnumber')
 $cardnumber.on('keyup',function(){ 
   check(cardnumber,$cardnumber)
-  allcheck(3)
+//每四碼自動加空白
+var val = $(this).val();
+val = val.replace(/(\d{4})(?=\d)/g, "$1 ");
+$(this).val(val);
+allcheck(3)
 })
 //持卡人姓名
 var cardholder = /^[\u4e00-\u9fa5_a-zA-Z]{2,10}$/;
