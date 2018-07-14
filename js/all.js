@@ -1,5 +1,5 @@
 {
-  var now = 3;
+  var now = 0;
   $(".form").eq(now).show();
   $(".submit").on("click", function() {
     now < 3 ? now++ : (now = 4);
